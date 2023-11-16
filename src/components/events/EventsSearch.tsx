@@ -4,7 +4,7 @@ import { useRef } from "react"
 
 export default function EventsSearch({onSearch} : any) {
 
-  const months = ["January", "February", "March", "May", "June", "July", "August", "September", "October", "November", "December"]
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
   const yearInputRef = useRef<HTMLSelectElement>(null)
   const monthInputRef = useRef<HTMLSelectElement>(null)
 
@@ -13,6 +13,7 @@ export default function EventsSearch({onSearch} : any) {
     const selectedYear = yearInputRef.current?.value
     const selectedMonth = monthInputRef.current?.value
     onSearch(selectedYear, selectedMonth)
+
   }
   return (
     <form className={styles.form} onSubmit={submitHandler}>
@@ -33,7 +34,7 @@ export default function EventsSearch({onSearch} : any) {
                 <label htmlFor="month">Month</label>
                 <select id="month" ref={monthInputRef}>
                     {months.map((month, monthIndex) => (
-                        <option key={monthIndex} value={month}>
+                        <option key={monthIndex} value={monthIndex+1}>
                             {month}
                         </option>
                     ))}

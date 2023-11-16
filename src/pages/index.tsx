@@ -7,8 +7,9 @@ export default function Home(){
   const router = useRouter()
   const featuredEvents = getFeaturedEvents()
 
-  const findEventsHandler = (year:string, month:string) => {
+  const findEventsHandler = (year:number, month:number) => {
     const fullPath = `/events/${year}/${month}`
+    console.log(fullPath)
     router.push(fullPath)
   }
 
