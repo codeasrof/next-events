@@ -9,3 +9,7 @@
 html,body{
   font-family: "Poppins", sans-serif;
 }
+.center {
+  margin: auto;
+  text-align: center;
+}
